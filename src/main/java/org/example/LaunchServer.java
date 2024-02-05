@@ -13,6 +13,7 @@ public class LaunchServer {
             while (true){
                 Socket cliente = serverSocket.accept();
                 System.out.println("Cliente conectado desde: " + cliente.getInetAddress());
+
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

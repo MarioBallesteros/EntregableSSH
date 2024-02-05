@@ -6,7 +6,7 @@ import java.net.Socket;
 public class LaunchClient {
     public static void main(String[] args) {
         try {
-        String ip = "";
+        String ip = "10.17.0.145";
         int  puerto = 8080;
         Socket socketCliente = new Socket(ip,puerto);
         System.out.println(socketCliente.isConnected());
