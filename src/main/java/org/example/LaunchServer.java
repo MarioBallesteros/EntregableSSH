@@ -15,13 +15,13 @@ public class LaunchServer {
                 try (Socket cliente = serverSocket.accept();
                      BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()))) {
                     System.out.println("Cliente conectado desde: " + cliente.getInetAddress());
+                    System.out.println("Clave publica:");
                     String publicKey = in.readLine();
                     if (publicKey != null && !publicKey.isEmpty()) {
-                        // Aquí se almacenaría la clave pública recibida
-                        System.out.println("Clave pública recibida y almacenada.");
+                        System.out.println("Clave pub recibida y guardada");
                     }
                 } catch (IOException e) {
-                    System.err.println("Error al manejar la conexión del cliente: " + e.getMessage());
+                    System.err.println("Error al conectar: " + e.getMessage());
                 }
             }
         } catch (IOException e) {
