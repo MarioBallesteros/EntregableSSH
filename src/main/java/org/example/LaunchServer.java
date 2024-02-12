@@ -19,6 +19,7 @@ public class LaunchServer {
                     String publicKey = in.readLine();
                     if (publicKey != null && !publicKey.isEmpty()) {
                         System.out.println("Clave pub recibida y guardada");
+                        System.out.println(publicKey);
                     }
                 } catch (IOException e) {
                     System.err.println("Error al conectar: " + e.getMessage());

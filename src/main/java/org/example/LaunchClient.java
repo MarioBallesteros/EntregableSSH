@@ -33,19 +33,17 @@ public class LaunchClient {
     }
 
     private static boolean claveNoCaducada() {
+
         return false;
     }
 
     private static void enviarClavePublicaPorTCP(String ip, int puerto) {
         try (Socket socketCliente = new Socket(ip, puerto);
              OutputStream out = socketCliente.getOutputStream()) {
-            // Leer el archivo de la clave pública en un array de bytes
             byte[] clavePublicaBytes = Files.readAllBytes(Paths.get(RUTA_PUB));
-            // Enviar la clave pública
             out.write(clavePublicaBytes);
-            // Hacer flush explícitamente para asegurar que todos los datos se envían
             out.flush();
-            System.out.println("Clave pública enviada al servidor mediante TCP.");
+            System.out.println("Clave pública enviada al servidor mediante TCP");
         } catch (IOException e) {
             System.err.println("Error al enviar la clave pública: " + e.getMessage());
         }
